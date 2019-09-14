@@ -3,6 +3,7 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
+  
 }
 
 /* body {
@@ -19,7 +20,7 @@ body, html {
   }
 
 .off {
-  background-color: lightgray;
+  background-color: transparent; 
 }
 
 .on {
@@ -27,7 +28,7 @@ body, html {
 }
   
 .box:hover { 
-  background: rgb(220, 28, 3);
+  background: rgb(247, 146, 133);
 }
 
 .center {
