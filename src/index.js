@@ -47,7 +47,7 @@ class Main extends React.Component {
         this.setState({
             initialGrid: Array(this.rows).fill().map(()=> Array(this.cols).fill(false)),
         })
-
+        
         let cloneGrid = deepCopy(this.state.initialGrid);
 
         for(let i = 0; i < this.rows; i++) {
@@ -77,17 +77,15 @@ class Main extends React.Component {
               let numberOfNeighbours = 0;
 
             //checking all 8 surrounding cells 
-            if(i >= 0 && i <= this.rows && j >= 0 && j <= this.cols ) {
-                if(grid[i-1][j-1]) numberOfNeighbours ++
-                if(grid[i-1][j]) numberOfNeighbours ++
-                if(grid[i-1][j+1]) numberOfNeighbours ++
-                if(grid[i][j-1]) numberOfNeighbours ++
-                if(grid[i][j+1]) numberOfNeighbours ++
-                if(grid[i+1][j-1]) numberOfNeighbours ++
-                if(grid[i+1][j]) numberOfNeighbours ++
-                if(grid[i+1][j+1]) numberOfNeighbours ++
-            }  
-
+                if (i > 0 && j > 0) if(grid[i-1][j-1]) numberOfNeighbours ++
+                if (i > 0) if(grid[i-1][j]) numberOfNeighbours ++
+                if (i > 0 && j < this.cols-1) if(grid[i-1][j+1]) numberOfNeighbours ++
+                if (j > 0) if(grid[i][j-1]) numberOfNeighbours ++
+                if (j < this.cols-1) if(grid[i][j+1]) numberOfNeighbours ++
+                if (i < this.rows-1 && j>0) if(grid[i+1][j-1]) numberOfNeighbours ++
+                if (i < this.rows-1) if(grid[i+1][j]) numberOfNeighbours ++
+                if (i < this.rows-1 && j < this.cols-1) if(grid[i+1][j+1]) numberOfNeighbours ++
+  
             // applying rules
             if(grid[i][j] && numberOfNeighbours < 2 || numberOfNeighbours > 3 ) cloneGrid[i][j] = false;
             if(!grid[i][j] && numberOfNeighbours === 3) cloneGrid[i][j] = true;
