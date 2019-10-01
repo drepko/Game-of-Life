@@ -1,58 +1,201 @@
-body, html {
-  background-image: url(https://image.freepik.com/vecteurs-libre/fond-aquarelle_1020-970.jpg);
+body {
+  background-image: url(Images/bg.jpg);
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
+  background-color: #464646;
   margin: 0;
-  
+  font-family: "Century Gothic", "Lucida Grande", "Arial,sans-serif";
 }
 
-/* body {
-  background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/squares.png) 
-} */
-  
+#nav-bar {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+
+#nav-bar a {
+  text-decoration: none;
+}
+
+#nav-bar .nav-title {
+  width: 140px;
+  background-color: black;
+  color: white;
+  height: 56px;
+  margin-bottom: -72px;
+}
+
+#nav-bar h1 {
+  color: white;
+  padding: 6px;
+  text-align: right;
+  font-size: 11px;
+}
+
+#nav-bar .nav-box {
+  line-height: 0.9;
+  position: relative;
+  left: 141px;
+  top: 0;
+  background: #000;
+  opacity: 0.6;
+  height: 56px;
+}
+.nav-box ul {
+  padding: 6px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #999;
+  list-style: none;
+  font-size: 11px;
+}
+.game {
+  margin-top: 20px;
+  color: black;
+}
 .box {
-  display: inline-block;       
-  border: 1px solid #ffffff;
+  display: inline-block;
+  border: 1px solid #ffffff73;
   width: 11px;
   height: 11px;
   margin-left: -1px;
   margin-bottom: -1px;
-  }
+}
 
 .off {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .on {
-  background-color: rgb(220, 28, 3);
-}
-  
-.box:hover { 
-  background: rgb(247, 146, 133);
+  background-color: rgb(0, 70, 63);
 }
 
-.center {
-  margin: auto;
-  display: table;
-  margin-top: 10px;
+.box:hover {
+  background: rgba(0, 70, 63, 0.54);
 }
 
 .grid {
   width: 150px;
   line-height: 0;
   margin: auto;
-  box-shadow: 0px 0px 20px white;
+  box-shadow: 0px 0px 15px #46464694;
   margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid white;
 }
-  
-h1, h2, h3, h4 {
-  color: white;
+
+.txt,
+.btns, .header{
   margin: auto;
   text-align: center;
   width: 50%;
-  margin-top: 10px;
 }
 
-h4 {
-  margin-top: 0px;
+.header {
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  width: 50%;
+  border-bottom: 1px solid white;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.generations, .txt {
+  font-weight: bold;
+  color: white;
+}
+
+.gameover {
+  position: absolute;
+  top: 250px;
+  font-size: 20px;
+  color: black;
+  left: 26%;
+}
+
+button, select {
+  box-shadow: 0px 0px 15px #46464694;
+  margin: 0 0 16px 1px;
+  width: 80px;
+  background: #000;
+  /* opacity: 0.6; */
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.select {
+  width: 150px;
+  text-transform: uppercase;
+  border-radius: 0;
+  height: 16px;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  opacity: 1;
+}
+
+button:active:after {
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.content-box {
+  position: absolute;
+  top: 70px;
+  right: 90px;
+  width: 400px;  
+}
+
+.speed-btn {
+  width: 40px;
+}
+
+.content-box h1 {
+  border-bottom: 1px solid white;
+}
+
+.content-box .content {
+  font-size: 11px;
+  background-color: white;
+}
+
+.content-box h1, .content-box .content {
+  padding: 20px;
+}
+
+.meter { 
+  height: 6px;  
+  width: 200px;
+	position: relative;
+  background: #000;
+  /* opacity: 0.6; */
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 6px;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  /* width: 25%; */
+  -moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+  background-color: rgb(0, 70, 63);
+
+  position: relative;
+  overflow: hidden;
 }

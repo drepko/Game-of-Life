@@ -3,7 +3,7 @@ import Box from './Box';
 
 class Grid extends React.Component {
     render(){
-        const width = this.props.cols * 12;
+        const width = this.props.cols * 12; //multiplied by size cells + one
         let rowsArray = [];
 
         for(let i = 0 ; i < this.props.rows; i++ ) {
@@ -26,7 +26,9 @@ class Grid extends React.Component {
 
 
         return(
-            <div className='grid' style={{width: width}}>
+            <div className='grid' 
+            style={{width: width}}
+            >
             {rowsArray}
             </div>
            
